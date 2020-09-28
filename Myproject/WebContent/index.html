@@ -1,0 +1,114 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>首页</title>
+</head>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-image: url(images/timg1.jpg);
+    background-size: 100%, 100vh;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form {
+    width: 350px;
+    height: 500px;
+    background: rgb(182, 153, 216);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: .9;
+  }
+
+  input[type=text],
+  input[type=password] {
+    width: 200px;
+    margin-bottom: 30px;
+    height: 35px;
+  }
+
+  input[type=text]:focus,
+  input[type=password]:focus {
+    border: 5px solid slateblue;
+    outline: none;
+  }
+
+  input[type=submit],
+  input[type=button] {
+    width: 90px;
+    height: 35px;
+    display: inline-block;
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  label {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    align-self: flex-start;
+    margin-left: 76px;
+    color: rgb(255, 255, 255);
+  }
+
+  h2 {
+    margin-bottom: 50px;
+    font-weight: bold;
+  }
+  .inputs{
+    margin-top: 20px;
+  }
+</style>
+
+
+
+<body>
+  <audio src='www.mp3' autoplay></audio>
+  <form id='form1' action="Login" method="post">
+    <h2>Login</h2>
+
+    <label for="zhanghao">账号</label>
+    <input id='zhanghao' type="text" id='username' name="username" maxlength="12" />
+
+    <label for="mima">密码</label>
+    <input id='mima' type="password" name="password" maxlength="12" />
+
+    <div class="inputs">
+      <input type="button" value="提交" id='sub'/>
+      <a href="registry.jsp">注册</a>
+    </div>
+  </form>
+</body>
+
+<script>
+
+	document.querySelector('#sub').addEventListener('click',fn);
+	function fn(){
+		let x = confirm('你确定要提交吗??');
+		console.dir(form1)
+		if(x){
+			form1.submit();
+		}else{
+			form1.username.focus();
+		}
+		
+	}
+	
+	
+</script>
+
+</html>
